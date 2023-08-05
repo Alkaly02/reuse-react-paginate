@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import ReuseItems from './pagination/components/ReuseItems';
+// import PaginatedItems from './pagination/PaginationItems';
+// import PaginatedItems2 from './pagination/PaginationItems2';
+import ReusePaginationItems from './pagination/reusePagination/ReusePaginationItems';
+
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-2">
+      <h1>React Pagination</h1>
+      {/* <PaginatedItems itemsPerPage={5} />
+      <PaginatedItems2 itemsPerPage={5} /> */}
+
+      <ReusePaginationItems
+        resourceData={items}
+        itemsPerPage={3}
+      >
+        <ReuseItems />
+      </ReusePaginationItems>
+
     </div>
   );
 }
